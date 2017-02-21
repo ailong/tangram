@@ -5,10 +5,10 @@ var source_origin = '__worker_src_origin__'; // variable name used to refer to U
 
 // prepend this code - wraps Tangram source in a function and later calls arguments.callee.toString to get source
 var prefix = '(function(){';
-    prefix += 'var target = (typeof module !== "undefined" && module.exports) || (typeof window !== "undefined");';
+    prefix += 'var target = (typeof window !== "undefined");';
     prefix += 'if (target) {';
-    prefix += 'var ' + source_variable + ' = arguments.callee.toString();';
-    prefix += 'var ' + source_origin + ' = document.currentScript.src;';
+    prefix += 'window.__worker_src__' + ' = arguments.callee.toString();';
+    prefix += 'window.__worker_src_origin__' + ' = document.currentScript.src;';
     prefix += '};';
 
 
