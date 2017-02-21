@@ -251,8 +251,8 @@ export default class Scene {
             // load from source object using browserify shim (preferred)
             var src_map_url = '\n//#' + ' sourceMappingURL=' + __worker_src_origin__ + '.map';
             worker_url = URLs.createObjectURL(new Blob(['(' + __worker_src__ + ')()' + src_map_url], { type: 'application/javascript' }));
-            __worker_src__ = null;
-            __worker_src_origin__ = null;
+            // __worker_src__ = null;
+            // __worker_src_origin__ = null;
         }
         /* jshint +W117 */
 
