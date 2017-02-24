@@ -70,10 +70,12 @@ describe('Scene', function () {
             });
 
             it('correctly sets the value of the config object', () => {
+                this.timeout(10000);
                 assert.equal(subject.config_source, sampleScene);
             });
 
             it('sets the initialized property', () => {
+                this.timeout(10000);
                 assert.isTrue(subject.initialized);
             });
 
@@ -82,6 +84,7 @@ describe('Scene', function () {
         describe('when the scene is already initialized', () => {
 
             it('handles second load() call', () => {
+                this.timeout(10000);
                 return subject.load().then(() => {
                     return subject.load();
                 });
